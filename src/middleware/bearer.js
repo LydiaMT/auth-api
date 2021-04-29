@@ -1,3 +1,4 @@
+
 'use strict';
 
 const users = require('../models/users.js')
@@ -20,6 +21,9 @@ module.exports = async (req, res, next) => {
   }
 
   function _authError() {
+    // ADDED STATUS CODE FOR TESTS
+    res.status(403).send('Invalid Login');
     next('Invalid Login');
+
   }
 }
