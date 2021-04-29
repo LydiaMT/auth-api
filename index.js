@@ -4,6 +4,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 const server = require('./src/server.js');
+const PORT = process.env.PORT || 3000;
 
 const options = {
   useNewUrlParser: true,
@@ -13,4 +14,4 @@ const options = {
 
 mongoose.connect(process.env.MONGODB_URI, options);
 
-server.start(3000);
+server.start(PORT);
